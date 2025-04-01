@@ -34,7 +34,7 @@ acb-system/
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/acb-system.git
+   git clone https://github.com/Oliesta/acb-system.git
    ```
 2. Install dependencies:
    ```bash
