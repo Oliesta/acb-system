@@ -13,15 +13,19 @@ The ACB System is an open-source blockchain-based solution to ensure transparenc
 ## Repository Structure
 ```
 acb-system/
-│── contracts/           # Smart contracts for blockchain transactions
-│── backend/             # Backend APIs for handling transactions and data storage
-│── frontend/            # UI components (designed with v0.dev)
-│── docs/                # Documentation (installation, usage, contribution guidelines)
-│── tests/               # Unit and integration tests
-│── scripts/             # Deployment and automation scripts
-│── .github/             # GitHub workflows for CI/CD
-│── LICENSE              # Open-source license
-│── README.md            # Project overview and setup guide
+│── contracts/           # Smart contracts (Solidity/Rust) for Escrow & Milestones
+│── backend/             # Node.js/Python API for OCR, logic, and database management
+│── frontend/            # Web Dashboard (v0.dev/Next.js) for public transparency
+│── mobile/              # React Native/Flutter app for site inspections & PoD
+│── oracles/             # Integration scripts for CSD, SARS, and GPS data
+│── storage/             # IPFS/Filecoin logic for tamper-proof invoice hosting
+│── governance/          # Multi-sig and voting logic for budget adjustments
+│── docs/                # Whitepaper, API docs, and Setup Guide
+│── tests/               # Security audits and integration test suites
+│── scripts/             # One-click deployment (Hardhat/Foundry)
+│── .github/             # CI/CD pipelines and automated security scanning
+│── README.md            # The "Face" of the project
+└── LICENSE              # MIT License (Open Source)
 ```
 
 ## Getting Started
