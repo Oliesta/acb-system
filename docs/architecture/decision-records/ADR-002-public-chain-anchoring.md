@@ -20,7 +20,7 @@ Ledger events are stored in an append-only off-chain database. At a fixed interv
 
 ## Rules
 - LED-001: Ledger events MUST be append-only. Corrections are new events that reference the original.
-- LED-002: A batch MUST be anchored at least every 24 hours, and within 1 hour of a new flag or a published community observation.
+- LED-002: A batch MUST be anchored at least every 24 hours, and within 1 hour of a new flag, a published community observation or a Paid spend entry.
 - LED-003: The portal MUST let anyone download a batch and verify it against its on-chain root.
 
 ## Review Trigger

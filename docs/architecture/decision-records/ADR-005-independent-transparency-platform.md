@@ -10,7 +10,7 @@ The earlier design made the ACB System a payment release gate inside government 
 A gate also has real drawbacks: it needs every public body to agree to it, it makes the system part of the process it should be watching, and the operator would carry legal responsibility for payment decisions.
 
 ## Decision
-The ACB System is an independent, public transparency platform. It collects public procurement data and community observations, links them per contract, highlights risk indicators (flags), and publishes everything in a tamper-evident way. It **never** approves, blocks, authorises or holds payments, and it does not need any public body's cooperation to work.
+The ACB System is an independent, public transparency platform. It collects public procurement data, a per-tender record of how the awarded funds are spent, and community observations, links them per contract, highlights risk indicators (flags), and publishes everything in a tamper-evident way. It **never** approves, blocks, authorises or holds payments, and it does not need any public body's cooperation to work.
 
 ## Alternatives
 - Payment release gate (ADR-001): rejected because it is not the project's purpose and depends on government cooperation.
@@ -23,7 +23,7 @@ The ACB System is an independent, public transparency platform. It collects publ
 
 ## Rules
 - IND-001: The system MUST NOT approve, block, authorise, hold or move any payment.
-- IND-002: Every core feature MUST work using only lawful public sources and community observations, without any public body's cooperation.
+- IND-002: The open data portal, community observations and flags MUST work using only lawful public sources and community observations, without any public body's cooperation. The spend ledger ([ADR-007](ADR-007-tender-spend-ledger.md)) needs the awarded contractor to record entries. That participation MAY be a contract condition set by the public body, or voluntary. A contractor that does not take part MUST be shown as not participating, not hidden.
 - IND-003: Data a public body chooses to share MAY be included, and MUST be labelled with its source.
 - IND-004: The project MUST NOT accept funding or terms that give any public body or supplier control over what is published.
 

@@ -23,6 +23,7 @@ Collects procurement data from public sources, keeps snapshots, and records wher
 | Auditor-General reports | Irregular expenditure findings |
 | CIPC company records (where public) | Company registration date and status |
 | Community observations | Site reports, see [Evidence rules](../evidence/rules.md) |
+| Contractor spend ledgers | Spend entries recorded by participating contractors, see [Spend ledger rules](../spend/rules.md) |
 
 ## Edge Cases
 - **Two sources disagree** (for example on award value): both values are shown with their sources. The system MUST NOT silently pick one.

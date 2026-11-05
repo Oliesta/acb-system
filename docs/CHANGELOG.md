@@ -1,5 +1,14 @@
 # Documentation Changelog
 
+## 2026-11-05 (spend ledger)
+
+- Restored the original ACB idea as the core: a per-tender spend ledger with ACB references printed on invoices. See [ADR-007](architecture/decision-records/ADR-007-tender-spend-ledger.md).
+- Added Spend ledger rules (`SPD`) and the [village stadium example](context/example-stadium.md).
+- Amended IND-002 in ADR-005 (still Proposed): the spend ledger needs the contractor to take part. Other features stay independent.
+- Amended ADR-006 (still Proposed): Phase 1 is now a ledger prototype and Phase 2 a pilot project.
+- Added flags F10 to F16, rules EVD-009, EVD-010, TND-006, DSC-008, DSC-009, and threats T13 to T18.
+- Changed LED-002 in ADR-002 to also anchor after Paid spend entries.
+
 ## 2026-11-05 (later)
 
 - Clarified the core purpose: the ACB System is an independent public transparency platform. It does not approve, block or hold payments. See [ADR-005](architecture/decision-records/ADR-005-independent-transparency-platform.md).

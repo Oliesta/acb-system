@@ -14,6 +14,7 @@ Builds one public record per tender and contract from source data: notice, award
 - TND-003: A record MUST show the timeline: advertised, closing, awarded, expected completion, and any published changes.
 - TND-004: Published variations (changes to value or scope) MUST be added as new events, never by overwriting the original value.
 - TND-005: Where a project has published deliverables or milestones, they MUST be listed so community observations can be matched to them.
+- TND-006: A contract record MUST show whether it has a [spend ledger](../spend/rules.md), and link to it.
 
 ## Edge Cases
 - **Consortium or joint venture:** each member is listed.
@@ -27,7 +28,7 @@ Builds one public record per tender and contract from source data: notice, award
 ## Rule Ownership
 | Rule ID | Module | Test |
 |---------|--------|------|
-| TND-001 to TND-005 | Contract record builder | Planned |
+| TND-001 to TND-006 | Contract record builder | Planned |
 
 ## Owner
 @Oliesta

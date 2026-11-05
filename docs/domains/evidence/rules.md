@@ -15,6 +15,8 @@ Receives and moderates community observations, and runs the community watchdog p
 - EVD-006: An observation is **verified** only when 2 or more independent watchdogs report the same thing, or 1 watchdog's in-app evidence is confirmed by a moderator. Only verified observations can feed flags.
 - EVD-007: Watchdog identity MUST NOT be published or shared with suppliers or public bodies.
 - EVD-008: Observations MUST describe what was seen, not accuse people. Moderators MUST remove accusations, names and personal information before publication.
+- EVD-009: Observations SHOULD record what can be counted, such as workers on site and visible stages of work, so they can be compared with the [spend ledger](../spend/rules.md) (flag F14).
+- EVD-010: A dispute made by a payee or worker with their own confirmation code or payslip reference counts as verified for flag F13, because only the holder has that code.
 
 ## Edge Cases
 - **Photo shows a person:** faces and number plates MUST be blurred on the public copy.
@@ -33,7 +35,7 @@ Watchdogs are trained community members who report what they can see on public p
 ## Rule Ownership
 | Rule ID | Module | Test |
 |---------|--------|------|
-| EVD-001 to EVD-008 | Field app, Observation moderation | Planned |
+| EVD-001 to EVD-010 | Field app, Observation moderation | Planned |
 
 ## Owner
 @Oliesta
