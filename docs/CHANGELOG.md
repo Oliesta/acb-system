@@ -1,5 +1,11 @@
 # Documentation Changelog
 
+## 2026-11-05 (contributor guide)
+
+- Added the [Contributing guide](../CONTRIBUTING.md) and a pull request template.
+- Moved the change process and writing standards from the documentation index into the Contributing guide.
+- Rewrote the project README in a more formal style, without icons.
+
 ## 2026-11-05 (spend ledger)
 
 - Restored the original ACB idea as the core: a per-tender spend ledger with ACB references printed on invoices. See [ADR-007](architecture/decision-records/ADR-007-tender-spend-ledger.md).

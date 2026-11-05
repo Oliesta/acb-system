@@ -39,22 +39,6 @@ Each domain has a `rules.md` with Rule IDs, edge cases and acceptance criteria.
 
 Retired rule sets (`MIL`, `PAY`) are in the [archive](archive/).
 
-## How to change anything
+## Changing the docs or code
 
-Every change follows five steps, even a one-line fix:
-
-1. **Define:** update the rule or acceptance criteria in the relevant doc.
-2. **Decide:** if it is a real choice between alternatives, write or cite an ADR.
-3. **Generate:** implement it.
-4. **Verify:** add tests named after the Rule IDs.
-5. **Reconcile:** fix gaps, update links and the [CHANGELOG](CHANGELOG.md).
-
-Every pull request MUST include a doc update or the line `No doc impact, because <reason>`.
-
-## Writing rules
-
-- Rules use MUST, MUST NOT, SHOULD and MAY in capitals.
-- One fact lives in one place. Link to it instead of repeating it.
-- Use numbers and conditions, not words like "fast" or "secure".
-- No em dashes.
-- Superseded docs move to [archive](archive/) with a link to their replacement. Reasoning is never deleted.
+The change process, writing standards and review requirements are in the [Contributing guide](../CONTRIBUTING.md).
