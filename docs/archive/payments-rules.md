@@ -1,7 +1,9 @@
 # Payments Rules
 
+> **Superseded on 2026-11-05.** These rules assumed the ACB System approves payments. [ADR-005](../architecture/decision-records/ADR-005-independent-transparency-platform.md) removes that role. Replaced by [Tenders](../domains/tenders/rules.md), [Evidence](../domains/evidence/rules.md) and [Flags](../domains/flags/rules.md). Kept for reasoning only. These Rule IDs are retired and MUST NOT be reused.
+
 ## Responsibility
-Runs the payment release gate. Decides whether a milestone payment may be authorised, collects approvals and sends authorisations to the public body's financial system. Holds no funds, see [ADR-001](../../architecture/decision-records/ADR-001-funds-stay-on-government-rails.md), which owns PAY-001 and PAY-007.
+Runs the payment release gate. Decides whether a milestone payment may be authorised, collects approvals and sends authorisations to the public body's financial system. Holds no funds, see [ADR-001](../architecture/decision-records/ADR-001-funds-stay-on-government-rails.md), which owns PAY-001 and PAY-007.
 
 ## Invariants
 - PAY-INV-1: At most one authorisation exists per milestone.

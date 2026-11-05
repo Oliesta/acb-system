@@ -1,5 +1,7 @@
 # Milestones Rules
 
+> **Superseded on 2026-11-05.** These rules assumed the ACB System approves payments. [ADR-005](../architecture/decision-records/ADR-005-independent-transparency-platform.md) removes that role. Replaced by [Tenders](../domains/tenders/rules.md), [Evidence](../domains/evidence/rules.md) and [Flags](../domains/flags/rules.md). Kept for reasoning only. These Rule IDs are retired and MUST NOT be reused.
+
 ## Responsibility
 Defines milestones, receives claims, assigns inspectors and records verification decisions.
 

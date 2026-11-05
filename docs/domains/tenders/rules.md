@@ -1,35 +1,33 @@
 # Tenders Rules
 
 ## Responsibility
-Records tenders, awards, contracts and variations. Does not run the tender process itself.
+Builds one public record per tender and contract from source data: notice, award, value, supplier, variations and expected delivery.
 
 ## Invariants
-- TND-INV-1: Every contract has exactly one public body and one supplier.
-- TND-INV-2: The sum of milestone values equals the current contract value.
+- TND-INV-1: Every contract record has exactly one public body.
+- TND-INV-2: Every value on a record has a source (see [Sources rules](../sources/rules.md)).
 
 ## Rules
-- TND-001: A contract MUST reference its tender number as published on the eTender Publication Portal, or record the documented reason it was not advertised (for example an approved deviation).
-  Valid: `tender_ref: "DPW-2026-0142"`. Invalid: empty tender reference with no deviation reason.
-- TND-002: A supplier MUST be identified by CSD supplier number, not by name.
-- TND-003: Award value, supplier and award date MUST be public from the moment the contract is registered.
-- TND-004: A contract MUST have at least one milestone before any claim can be made.
-- TND-005: A variation MUST record its reason and approver. A variation that takes total variations above 20% of the original contract value MUST need approval from a role above the original approver. (Proposed threshold, to be confirmed.)
-- TND-006: Deviations from normal procurement (emergency, single source) MUST be flagged on the portal.
+- TND-001: A record MUST be keyed by the public body and the tender number as published. A contract with no published tender number MUST be shown as "not advertised", which is itself a flag input.
+  Valid: `DPW-2026-0142` from the Department of Public Works. Invalid: a record with no public body.
+- TND-002: Suppliers MUST be identified by registered company name and, where published, CSD supplier number or company registration number.
+- TND-003: A record MUST show the timeline: advertised, closing, awarded, expected completion, and any published changes.
+- TND-004: Published variations (changes to value or scope) MUST be added as new events, never by overwriting the original value.
+- TND-005: Where a project has published deliverables or milestones, they MUST be listed so community observations can be matched to them.
 
 ## Edge Cases
-- **Duplicate registration:** the same tender number and supplier registered twice MUST be rejected.
-- **Cancelled contract:** remaining unpaid milestones are closed. Paid milestones stay visible.
-- **Split contracts:** several contracts with the same supplier and public body within 30 days that each fall just under a procurement threshold MUST be flagged for review.
-- **Consortium or joint venture:** each member is recorded by CSD number.
+- **Consortium or joint venture:** each member is listed.
+- **Cancelled tender:** stays visible, marked cancelled with the source of the cancellation.
+- **Re-advertised tender:** linked to the original.
+- **Award published without a notice:** shown, and feeds the "not advertised" flag.
 
 ## Acceptance Criteria
-- A registered contract appears on the portal with award data within 1 hour.
-- A variation over the threshold cannot be saved without the higher approval.
+- Any record shows its full timeline and sources on one page.
 
 ## Rule Ownership
 | Rule ID | Module | Test |
 |---------|--------|------|
-| TND-001 to TND-006 | Contract registry | Planned |
+| TND-001 to TND-005 | Contract record builder | Planned |
 
 ## Owner
 @Oliesta

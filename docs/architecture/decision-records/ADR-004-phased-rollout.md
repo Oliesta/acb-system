@@ -1,5 +1,8 @@
 # ADR-004: Phased rollout, transparency first
-Status: Proposed
+
+> **Superseded.** Its phases included a payment gate, which [ADR-005](ADR-005-independent-transparency-platform.md) removes. See [ADR-006](ADR-006-phased-rollout-independent.md). Kept for its reasoning.
+
+Status: Superseded by [ADR-006](ADR-006-phased-rollout-independent.md)
 Date: 2026-11-05
 Owner: @Oliesta
 

@@ -1,5 +1,8 @@
 # ADR-001: Funds stay on government payment rails
-Status: Proposed
+
+> **Superseded.** The maintainer clarified on 2026-11-05 that the ACB System must not approve or gate payments at all. See [ADR-005](ADR-005-independent-transparency-platform.md). This record is kept for its reasoning. Its rules PAY-001 and PAY-007 are retired.
+
+Status: Superseded by [ADR-005](ADR-005-independent-transparency-platform.md)
 Date: 2026-11-05
 Owner: @Oliesta
 
@@ -28,5 +31,5 @@ The system acts as a payment release gate. It holds no funds. It sends a signed 
 A legal framework for tokenised public funds, or a pilot funder who requires on-chain escrow.
 
 ## References
-- Documentation: [Architecture](../architecture.md), [Payments rules](../../domains/payments/rules.md)
+- Documentation: [Archived payments rules](../../archive/payments-rules.md)
 - Tests or validation: none yet

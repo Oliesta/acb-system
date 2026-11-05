@@ -15,10 +15,12 @@ Architecture Decision Records (ADRs) live in [decision-records](architecture/dec
 
 | ADR | Title | Status |
 |-----|-------|--------|
-| [ADR-001](architecture/decision-records/ADR-001-funds-stay-on-government-rails.md) | Funds stay on government payment rails | Proposed |
+| [ADR-001](architecture/decision-records/ADR-001-funds-stay-on-government-rails.md) | Funds stay on government payment rails | Superseded by ADR-005 |
 | [ADR-002](architecture/decision-records/ADR-002-public-chain-anchoring.md) | Anchor batched hashes to a public chain | Proposed |
 | [ADR-003](architecture/decision-records/ADR-003-personal-information-off-chain.md) | Personal information stays off-chain | Proposed |
-| [ADR-004](architecture/decision-records/ADR-004-phased-rollout.md) | Phased rollout, transparency first | Proposed |
+| [ADR-004](architecture/decision-records/ADR-004-phased-rollout.md) | Phased rollout, transparency first | Superseded by ADR-006 |
+| [ADR-005](architecture/decision-records/ADR-005-independent-transparency-platform.md) | Independent transparency platform, no role in approving funds | Proposed |
+| [ADR-006](architecture/decision-records/ADR-006-phased-rollout-independent.md) | Phased rollout for an independent platform | Proposed |
 
 ## Domain rules
 
@@ -26,11 +28,13 @@ Each domain has a `rules.md` with Rule IDs, edge cases and acceptance criteria.
 
 | Domain | Prefix | Responsibility |
 |--------|--------|----------------|
-| [Tenders](domains/tenders/rules.md) | `TND` | Tender, award and contract records |
-| [Milestones](domains/milestones/rules.md) | `MIL` | Milestone definitions, claims and verification decisions |
-| [Evidence](domains/evidence/rules.md) | `EVD` | Inspection evidence, invoices and the watchdog programme |
-| [Payments](domains/payments/rules.md) | `PAY` | The payment release gate and approvals |
+| [Sources](domains/sources/rules.md) | `SRC` | Collecting public data, snapshots and provenance |
+| [Tenders](domains/tenders/rules.md) | `TND` | One linked record per tender and contract |
+| [Evidence](domains/evidence/rules.md) | `EVD` | Community observations and the watchdog programme |
+| [Flags](domains/flags/rules.md) | `FLG` | Risk indicators and the right of reply |
 | [Disclosure](domains/disclosure/rules.md) | `DSC` | What the public portal shows, and what it never shows |
+
+Retired rule sets (`MIL`, `PAY`) are in the [archive](archive/).
 
 ## How to change anything
 
