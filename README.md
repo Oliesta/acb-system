@@ -1,105 +1,120 @@
-
----
-
 # ACB System (Anti-Corruption Blockchain System)
 
-> **Status:** 🔬 Pre-Alpha - Active Development
-> **Lead Developer:** REVOICE AI (Pty) Ltd (Reg: 2025/409722/07)
+> **Status:** 🔬 Pre-Alpha – Active Development
+> **Maintainer:** [@Oliesta](https://github.com/Oliesta)
+> **License:** MIT
 
 ## 🇿🇦 Restoring Trust in Public Procurement
 
-The **ACB System** is an open-source, decentralized framework designed to eliminate corruption in the South African public sector. By shifting from **reactive** investigations (SIU post-mortems) to **real-time** prevention, we ensure that every Rand allocated to a tender is trackable, verified, and used for its intended purpose.
+The **ACB System** is an open-source, decentralised framework for preventing corruption in South African public procurement. Instead of relying on **reactive** investigations after the money is gone (e.g. SIU post-mortems), it enforces **real-time** controls so that every Rand allocated to a tender is traceable, verified, and spent on its intended purpose.
 
-South Africa loses an estimated **R25–30 billion annually** to procurement corruption. The ACB System makes corruption not just detectable - but structurally impossible.
+South Africa loses an estimated **R25–30 billion a year** to procurement corruption. The goal of the ACB System is to make that corruption hard to commit and impossible to hide.
 
 ---
 
-## 🏛️ Project Governance & Public Benefit
+## 🏛️ Governance & Public Benefit
 
-While developed by **REVOICE AI (Pty) Ltd**, the ACB System is operated as a **Public Benefit Activity**. 
+The ACB System is run as a **public benefit project**, not a commercial product.
 
-* **Digital Public Good:** All core code is licensed under the MIT License to ensure it remains a permanent, free asset for the South African public.
-* **Fiduciary Oversight:** All grant funding is ring-fenced and utilized strictly for technical development, security auditing, and community onboarding. 
-* **Non-Inurement:** REVOICE AI (Pty) Ltd commits to a zero-dividend policy regarding project-specific grants; all surpluses are reinvested into the protocol's security and reach.
+* **Digital Public Good:** All core code is MIT-licensed and will remain a free, permanent asset for the South African public.
+* **Ring-fenced funding:** Any grant funding is used strictly for technical development, security audits, and community onboarding.
+* **No private profit:** Project-specific grants are not distributed as profit; any surplus is reinvested in the protocol's security and reach.
+* **Open governance:** Decisions about the protocol are documented publicly in [`governance/`](governance/).
 
 ---
 
 ## 🚀 Core Features
 
-* **Milestone-Based Escrow:** Tender funds are locked in smart contracts and only released in tranches upon verified physical progress.
-* **The "Glass Pipe" Ledger:** A public transparency portal where citizens can track fund utilisation in real-time, down to individual line items.
-* **Immutable Invoice Vault:** Invoices are hashed and stored on **IPFS**, preventing "lost" documents or retroactive tampering.
-* **Triple-Entry Accounting:** Every transaction is reconciled between the Government, the Contractor, and the Blockchain simultaneously.
-* **Automated Verification (Oracles):** Integration with the **National Treasury CSD** (Central Supplier Database) and **SARS** to ensure funds only reach verified, tax-compliant entities.
-* **Multi-Signature Governance:** Prevents single-point-of-failure corruption by requiring multiple independent authorisations for budget changes and fund releases.
+| Feature | What it does |
+|---------|--------------|
+| **Milestone-Based Escrow** | Tender funds are locked in smart contracts and released in tranches only once physical progress is verified. |
+| **"Glass Pipe" Ledger** | A public transparency portal where citizens can follow how funds are used, down to individual line items. |
+| **Immutable Invoice Vault** | Invoices are hashed and stored on **IPFS**, so documents can't go "missing" or be altered after the fact. |
+| **Triple-Entry Accounting** | Every transaction is reconciled between the government, the contractor, and the blockchain at the same time. |
+| **Automated Verification (Oracles)** | Checks against the **National Treasury Central Supplier Database (CSD)** and **SARS** ensure payments only reach registered, tax-compliant suppliers. |
+| **Multi-Signature Governance** | Budget changes and fund releases need several independent approvals, removing single points of failure. |
 
 ---
 
 ## 🔐 Data Privacy & POPIA Compliance
 
-The ACB System is designed with South Africa's **Protection of Personal Information Act (POPIA)** at its core:
+The system is designed around South Africa's **Protection of Personal Information Act (POPIA)**:
 
 | Data Type | Storage | Visibility |
 |-----------|---------|------------|
-| Contractor PII (names, IDs, banking) | **Off-chain** - encrypted PostgreSQL | Private, access-controlled |
-| Transaction hashes & amounts | **On-chain** - Polygon/Base | Public, anonymised |
-| Invoices & proof-of-delivery | **IPFS** - content-addressed | Public (redacted PII) |
-| Verification metadata (GPS, timestamps) | **Off-chain** with on-chain hash | Hash public, data private |
+| Contractor PII (names, IDs, banking details) | **Off-chain** – encrypted PostgreSQL | Private, access-controlled |
+| Transaction hashes & amounts | **On-chain** – Polygon / Base | Public, anonymised |
+| Invoices & proof-of-delivery | **IPFS** – content-addressed | Public, with PII redacted |
+| Verification metadata (GPS, timestamps) | **Off-chain**, with an on-chain hash | Hash public, data private |
 
-**Key principles:**
+**Key principles**
+
 - Personal information is **never** stored on the blockchain.
 - All on-chain data is anonymised or hashed.
-- Data subject access requests are supported via the admin API.
-- Full POPIA compliance audit will be conducted before pilot launch.
+- Data subject access requests are handled through the admin API.
+- A full POPIA compliance audit will be completed before any pilot launch.
 
 ---
 
 ## 📂 Repository Structure
 
+The planned layout is below. Most directories are not created yet; they will be added as each component is developed.
+
 ```text
 acb-system/
-├── contracts/         # Smart contracts (Solidity) for Escrow & Milestones
-├── backend/           # Node.js/Python API for OCR, logic, and database management
-├── frontend/          # Web Dashboard (Next.js) for public transparency
-├── mobile/            # React Native app for site inspections & proof-of-delivery
-├── oracles/           # Integration scripts for CSD, SARS, and GPS validation
-├── storage/           # IPFS/Filecoin logic for tamper-proof invoice hosting
-├── governance/        # Multi-sig constitution and non-inurement undertakings
-│   └── CONSTITUTION.md 
-├── docs/              # Whitepaper, POPIA framework, and Setup Guide
+├── contracts/         # Solidity smart contracts for escrow and milestones
+├── backend/           # API for OCR, business logic, and database access
+├── frontend/          # Next.js public transparency dashboard
+├── mobile/            # React Native app for site inspections and proof-of-delivery
+├── oracles/           # CSD, SARS, and GPS validation integrations
+├── storage/           # IPFS/Filecoin logic for tamper-proof invoice storage
+├── governance/        # Multi-sig constitution and public benefit commitments
+│   └── CONSTITUTION.md
+├── docs/              # Whitepaper, POPIA framework, and setup guide
 ├── SECURITY.md        # Responsible disclosure policy
-├── README.md
-└── LICENSE
+├── LICENSE
+└── README.md
 ```
 
 ---
 
 ## 🛡️ Security & Auditing
 
-This system is designed to handle public funds. Security is non-negotiable.
+This system is intended to handle public funds, so security is non-negotiable.
 
-* **Smart contract audits:** All contracts must pass at least two independent security audits before mainnet deployment.
-* **Upgradeable proxy pattern:** Contracts use time-locked governance for upgrades - no single key can modify the system.
-* **CI/CD security scanning:** Automated vulnerability scanning on every pull request.
+* **Independent audits:** Every smart contract must pass at least two independent security audits before mainnet deployment.
+* **Time-locked upgrades:** Contracts use an upgradeable proxy pattern with time-locked, multi-sig governance – no single key can change the system.
+* **Automated scanning:** Every pull request is scanned for vulnerabilities in CI.
+* **Responsible disclosure:** Please report vulnerabilities privately as described in [`SECURITY.md`](SECURITY.md), not in public issues.
 
 ---
 
 ## 🤝 How to Contribute
 
-We welcome **developers, auditors, legal experts, and community members** to help build this Trust Layer for South Africa.
+We welcome **developers, auditors, legal experts, and community members** who want to help build a trust layer for South Africa.
 
-### For Community Watchdogs (Non-Technical)
-You don't need to code to fight corruption. The **Community Watchdog Programme** trains citizens to:
-- Conduct site inspections and upload geo-tagged proof-of-delivery evidence.
-- Verify that physical progress matches reported milestones.
-- Flag discrepancies between invoices and actual deliverables.
-- **Interested?** See [`docs/watchdog-programme.md`](docs/watchdog-programme.md).
+### Developers & Auditors
+- Browse the open issues, or open one to propose a feature or report a bug.
+- Fork the repo, create a feature branch, and open a pull request with a clear description of the change.
+- Security reviews of contracts and architecture are especially welcome.
+
+### Legal & Policy Experts
+- Help us align the system with the PFMA, MFMA, PPPFA, and POPIA.
+- Review governance documents in [`governance/`](governance/).
+
+### Community Watchdogs (Non-Technical)
+You don't need to write code to fight corruption. The **Community Watchdog Programme** trains citizens to:
+- Inspect project sites and upload geo-tagged proof-of-delivery evidence.
+- Check that physical progress matches reported milestones.
+- Flag differences between invoices and what was actually delivered.
+
+**Interested?** See [`docs/watchdog-programme.md`](docs/watchdog-programme.md).
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details. This ensures the project remains a **Digital Public Good**, allowing governments and NGOs to deploy and fork the system freely to maximize social impact.
+Licensed under the **MIT License** – see [LICENSE](LICENSE). This keeps the ACB System a **Digital Public Good** that governments, municipalities, and NGOs can freely deploy, adapt, and fork.
 
 ---
 
@@ -107,12 +122,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 - **GitHub:** [github.com/Oliesta/acb-system](https://github.com/Oliesta/acb-system)
 - **Email:** oliestao@gmail.com
-- **Lead Organization:** REVOICE AI (Pty) Ltd, South Africa
 
 ---
 
 <p align="center">
   <strong>Build the Glass Pipe. Let everyone see where the money goes.</strong>
 </p>
-
----
